@@ -20,12 +20,12 @@ export default {
   data: function() {
     return {
       // init
-      memos: ''
-    };
+          memos: ''
+    }
   },
   mounted() {
     // definition Loading
-    this.setMemo();
+    this.setMemo()
   },
   methods: {
     setMemo() {
@@ -38,7 +38,7 @@ export default {
           console.error('err api')
           // FIXME: ↓Local test message for develop, Don't deploy!
           document.write('APIエラー')
-        });
+        })
     }
   }
 }
