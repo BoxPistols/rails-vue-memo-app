@@ -4,15 +4,17 @@ class Api::MemosController < ApplicationController
     @memos = Memo.order('created_at DESC')
   end
 
+  # post memo
   def create
-    @memos = Memo.new(memo_params)
+    @memo = Memo.new(memo_params)
     if @memo.save
       render :show
     end
   end
 
+  # post memo in privete for security
   private
     def memo_params
-      params.permit(:title, description)
+      params.permit(:title, :description)
     end
 end
